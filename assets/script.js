@@ -17,7 +17,8 @@ generateBtn.addEventListener("click", writePassword);
 var generatePassword = function() {
 
     alert ("Please select  your password criteria on the following windows:");
-    
+
+// Grabs lenght of password
 var passwordLenght = Number(prompt ("Select the lengh of your password: \nPassword must be at least 8 characters long and no more than 128 characters long."));
   console.log(passwordLenght);    
 
@@ -33,6 +34,8 @@ var passwordLenght = Number(prompt ("Select the lengh of your password: \nPasswo
       console.log(special);
       console.log(numbers);
 
+
+//Checks for what options the user selects for their password
 if (upperCase) {
     
       upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -77,19 +80,20 @@ if (numbers) {
         return;
     }
     
-  // Creates a pool of characters to pick from randomly
-
+  // Creates a pool of characters from the other variables to pick from randomly
     var characters = lowerCase.concat(upperCase,numbers,special);
     console.log(characters);
 
-    var passGen = '';
+    var passGen = "";
     for (var i = 0; i < passwordLenght; i++) {
       passGen += characters[Math.floor(Math.random() * characters.length)];
       console.log(passGen);
     }   
 
-
+//Displays password in a window and the text box on website
+    window.alert("Your new password is: \n" + passGen);
     return passGen;
+    
    
 }
 
